@@ -1,0 +1,57 @@
+Arguments: 
+  /usr/bin/node /usr/share/yarn/bin/yarn.js add react-native-flash-message
+
+PATH: 
+  /home/vitor/.fastlane/bin:/home/vitor/.yarn/bin:/home/vitor/.fastlane/bin:/home/vitor/.yarn/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/vitor/.dotnet/tools:/home/vitor/Android/Sdk/tools:/home/vitor/Android/Sdk/platform-tools:/home/vitor/Android/Sdk/tools:/home/vitor/Android/Sdk/platform-tools:/usr/local/bin:/home/vitor/Android/Sdk/tools:/home/vitor/Android/Sdk/platform-tools:/home/vitor/Android/Sdk/tools:/home/vitor/Android/Sdk/platform-tools:/usr/local/bin
+
+Yarn version: 
+  1.21.1
+
+Node version: 
+  10.18.1
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: ENOENT: no such file or directory, copyfile '/home/vitor/.cache/yarn/v6/npm-core-js-1.2.7-652294c14651db28fa93bd2d5ff2983a4f08c636-integrity/node_modules/core-js/fn/array/concat.js' -> '/home/vitor/Documentos/search-devs/node_modules/fbemitter/node_modules/core-js/fn/array/concat.js'
+
+npm manifest: 
+  {
+    "main": "node_modules/expo/AppEntry.js",
+    "scripts": {
+      "start": "expo start",
+      "android": "expo start --android",
+      "ios": "expo start --ios",
+      "web": "expo start --web",
+      "eject": "expo eject"
+    },
+    "dependencies": {
+      "@react-native-community/masked-view": "0.1.6",
+      "@react-navigation/native": "^5.1.5",
+      "@react-navigation/stack": "^5.2.10",
+      "axios": "^0.19.2",
+      "expo": "~37.0.3",
+      "expo-constants": "~9.0.0",
+      "react": "~16.9.0",
+      "react-dom": "~16.9.0",
+      "react-native": "https://github.com/expo/react-native/archive/sdk-37.0.1.tar.gz",
+      "react-native-gesture-handler": "~1.6.0",
+      "react-native-reanimated": "~1.7.0",
+      "react-native-safe-area-context": "0.7.3",
+      "react-native-screens": "~2.2.0",
+      "react-native-svg": "11.0.1",
+      "react-native-web": "~0.11.7"
+    },
+    "devDependencies": {
+      "babel-preset-expo": "~8.1.0",
+      "@babel/core": "^7.8.6"
+    },
+    "private": true
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
