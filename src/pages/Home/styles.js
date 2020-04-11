@@ -43,15 +43,15 @@ const styles = StyleSheet.create({
     },
 
     main: {
-        marginTop: 50,
+        marginTop: 80,
         justifyContent: 'center',
         alignItems: 'center',
     },
 
     searchImg: {
-        width: 350,
-        height: 250,
-        marginBottom: 30,
+        width: 250,
+        height: 200,
+        marginBottom: 20,
     },
 
     input: {

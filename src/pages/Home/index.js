@@ -1,5 +1,13 @@
 import React, { useState } from "react";
-import { View, Text, Image, TextInput, TouchableOpacity, ActivityIndicator } from "react-native";
+import { 
+  View, 
+  Text, 
+  Image, 
+  TextInput, 
+  TouchableOpacity, 
+  ActivityIndicator, 
+  KeyboardAvoidingView 
+} from "react-native";
 
 import styles from "./styles";
 import logoImg from "../../assets/logo.png";
@@ -25,7 +33,7 @@ export default function Home({ navigation }) {
   };
 
   return (
-    <View style={styles.container}>
+    <KeyboardAvoidingView behavior="padding" style={styles.container}>
 
       <View style={styles.header}>
         <View style={styles.logoContent}>
@@ -44,6 +52,7 @@ export default function Home({ navigation }) {
 
       <View style={styles.main}>
         <Image style={styles.searchImg} source={searchImg} />
+
         <TextInput 
           style={styles.input} 
           value={devs}
@@ -62,6 +71,7 @@ export default function Home({ navigation }) {
           {loading && <ActivityIndicator color="#fff" />}
         </TouchableOpacity>
       </View>
-    </View>
+
+    </KeyboardAvoidingView>
   );
 }
