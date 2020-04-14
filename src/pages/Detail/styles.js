@@ -6,68 +6,64 @@ const styles = StyleSheet.create({
         flex: 1,
         paddingHorizontal: 24,
         paddingTop: Constants.statusBarHeight + 20,
-        backgroundColor: '#fff',
-    },
-
-    header: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-    },  
-
-    logoContent: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-    },  
-
-    logoImg: {
-        width: 60,
-        height: 60,
-    },
-
-    logoText: {
-        fontSize: 20,
+        backgroundColor: "#fff",
+      },
+    
+      header: {
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between",
+      },
+    
+      backTouchableOpacity: {
+        flexDirection: "row",
+        justifyContent: "center",
+        alignItems: "center",
+      },
+    
+      logoContent: {
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between",
+      },
+    
+      logoImg: {
+        width: 45,
+        height: 45,
+      },
+    
+      logoText: {
+        fontSize: 18,
         marginLeft: 4,
-    },
-
-    logoTextBold: {
-        fontSize: 20,
-        fontWeight: 'bold',
+      },
+    
+      logoTextBold: {
+        fontSize: 18,
+        fontWeight: "bold",
         marginLeft: 4,
-        color: '#F50057',
-    },
-
-    routeContent: {
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-
-    routeTouchableOpacity: {
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-
-    routeText: {
-        color: '#F50057',
+        color: "#F50057",
+      },
+    
+      routeText: {
+        color: "#F50057",
         marginLeft: 8,
-    },
+        fontSize: 12,
+      },
 
     main: {
-        marginTop: 50,
+        marginTop: 30,
         justifyContent: 'center',
         alignItems: 'center',
     },
 
-    devImg: {
-        width: 150,
-        height: 150,
-        borderRadius: 100,
-        borderWidth: 5,
+    user: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderWidth: 1,
         borderColor: '#f0f0f5',
-        marginBottom: 20,
+        backgroundColor: '#fdfdfd',
+        padding: 20,
     },
 
     devsName: {
@@ -80,21 +76,57 @@ const styles = StyleSheet.create({
     },
 
     devsBio: {
-        marginTop: 18,
-        marginHorizontal: 10,
+        alignSelf: 'stretch',
+        marginTop: 10,
+        textAlign: 'center',
+        borderWidth: 1,
+        borderColor: '#f0f0f5',
+        backgroundColor: '#fdfdfd',
+        padding: 20,
+    },
+
+    devsIconContent: {
+        marginTop: 8,
+        flexDirection: 'row',
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+    },
+
+    devsIconText: {
+        marginLeft: 6,
+    },
+
+    buttonsGroup: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginTop: 20,
+        padding: 20,
+        paddingHorizontal: 30,
+        borderWidth: 1,
+        borderColor: '#f0f0f5',
+        backgroundColor: '#fdfdfd',
+    },
+
+    buttonContent: {
+        justifyContent: 'center',
+        alignItems: 'center',
         textAlign: 'center',
     },
 
-    devsLocationContent: {
-        marginTop: 8,
-        flexDirection: 'row',
+    buttonCirle: {
+        borderWidth: 1,
+        borderColor: "#F50057",
+        width: 60,
+        height: 60,
+        borderRadius: 30,
         justifyContent: 'center',
         alignItems: 'center',
     },
 
-    devsLocationText: {
-        marginLeft: 6,
-    }    
+    buttonInfo: {
+        marginTop: 10,
+        color: '#666',
+    }
 
 });
 

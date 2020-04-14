@@ -6,41 +6,49 @@ const styles = StyleSheet.create({
         flex: 1,
         paddingHorizontal: 24,
         paddingTop: Constants.statusBarHeight + 20,
-        backgroundColor: '#fff',
-    },
-
-    header: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-    },  
-
-    logoContent: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-    },  
-
-    logoImg: {
-        width: 60,
-        height: 60,
-    },
-
-    logoText: {
-        fontSize: 20,
+        backgroundColor: "#fff",
+      },
+    
+      header: {
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between",
+      },
+    
+      backTouchableOpacity: {
+        flexDirection: "row",
+        justifyContent: "center",
+        alignItems: "center",
+      },
+    
+      logoContent: {
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between",
+      },
+    
+      logoImg: {
+        width: 45,
+        height: 45,
+      },
+    
+      logoText: {
+        fontSize: 18,
         marginLeft: 4,
-    },
-
-    logoTextBold: {
-        fontSize: 20,
-        fontWeight: 'bold',
+      },
+    
+      logoTextBold: {
+        fontSize: 18,
+        fontWeight: "bold",
         marginLeft: 4,
-        color: '#F50057',
-    },
-
-    route: {
-        color: '#F50057',
-    },
+        color: "#F50057",
+      },
+    
+      routeText: {
+        color: "#F50057",
+        marginLeft: 8,
+        fontSize: 12,
+      },
 
     main: {
         marginTop: 80,
@@ -77,6 +85,7 @@ const styles = StyleSheet.create({
         color: '#fff',
         fontSize: 16,
         fontWeight: 'bold',
+        marginLeft: 6,
     }
 
 });
