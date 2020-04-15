@@ -42,21 +42,10 @@ export default function Home() {
   return (
     <KeyboardAvoidingView behavior="padding" style={styles.container}>
       <View style={styles.header}>
-        <View style={styles.backIcon}>
-          <TouchableOpacity
-            style={styles.backTouchableOpacity}
-          >
-            <Feather name="terminal" size={28} color="#F50057" />
-          </TouchableOpacity>
-        </View>
-
         <View style={styles.logoContent}>
           <Image style={styles.logoImg} source={logoImg} />
-          <Text style={styles.logoText}>Search</Text>
-          <Text style={styles.logoTextBold}>Devs</Text>
+          <Text style={styles.logoText}>Search Devs</Text>
         </View>
-
-        <Text style={styles.routeText}>/Home</Text>
       </View>
 
       <View style={styles.main}>

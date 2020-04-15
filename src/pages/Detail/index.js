@@ -2,10 +2,8 @@ import React from "react";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import { Feather } from "@expo/vector-icons";
-  
-import styles from "./styles";
 
-import logoImg from "../../assets/logo.png";
+import styles from "./styles";
 
 import api from "../../services/api";
 
@@ -19,12 +17,12 @@ export default function Detail() {
     navigation.goBack();
   }
 
-  const submitFollowers = async () => {
+  const submitRepositories = async () => {
     try {
-      const response = await api.get(`/users/${devs.login}/followers`);
-      navigation.navigate("Follower", { followers: response.data });
+      const response = await api.get(`/users/${devs.login}/repos`);
+      navigation.navigate("Repositorie", { repositories: response.data });
     } catch (error) {
-      alert("Não foi possível encontrar os seguidores");
+      alert("Não foi possível encontrar os repositórios");
     }
   };
 
@@ -37,109 +35,112 @@ export default function Detail() {
     }
   };
 
+  const submitFollowers = async () => {
+    try {
+      const response = await api.get(`/users/${devs.login}/followers`);
+      navigation.navigate("Follower", { followers: response.data });
+    } catch (error) {
+      alert("Não foi possível encontrar os seguidores");
+    }
+  };
+
   return (
     <View style={styles.container}>
-
       <View style={styles.header}>
-        <View style={styles.backIcon}>
-          <TouchableOpacity
-            style={styles.backTouchableOpacity}
-            onPress={navigatieBack}
-          >
-            <Feather name="arrow-left" size={28} color="#F50057" />
-          </TouchableOpacity>
-        </View>
-
-        <View style={styles.logoContent}>
-          <Image style={styles.logoImg} source={logoImg} />
-          <Text style={styles.logoText}>Search</Text>
-          <Text style={styles.logoTextBold}>Devs</Text>
-        </View>
-
-        <Text style={styles.routeText}>/Detalhes</Text>
+        <TouchableOpacity
+          style={styles.backTouchableOpacity}
+          onPress={navigatieBack}
+        >
+          <Feather name="arrow-left" size={28} color="#0061ff" />
+        </TouchableOpacity>
+        <Text style={styles.descriptionHeader}>{devs.login}</Text>
       </View>
 
       <View style={styles.main}>
-        
         <View style={styles.user}>
-          <Image 
+          <Image
             style={{
-              width: 150,
-              height: 150,
+              width: 80,
+              height: 80,
               borderRadius: 100,
               borderWidth: 5,
-              borderColor: '#f0f0f5',
+              borderColor: "#f0f0f5",
               marginRight: 20,
-            }} 
-          source={{ uri: devs.avatar_url }}></Image>
+            }}
+            source={{ uri: devs.avatar_url }}
+          ></Image>
 
           <View>
             <Text style={styles.devsName}>{devs.name}</Text>
             <Text style={styles.devsUser}>{devs.login}</Text>
-
-            <View style={styles.devsIconContent}>
-              {devs.company && (
-                <Feather name="users" size={20} color="#F50057" />
-              )}
-              <Text style={styles.devsIconText}>{devs.company}</Text>
-            </View>
-
-            <View style={styles.devsIconContent}>
-              {devs.location && (
-                <Feather name="map-pin" size={20} color="#F50057" />
-              )}
-              <Text style={styles.devsIconText}>{devs.location}</Text>
-            </View>
           </View>
         </View>
-        
+
         <Text style={styles.devsBio}>{devs.bio}</Text>
-      </View>
 
-      <View style={styles.buttonsGroup}>
-        <View style={styles.buttonContent}>
-          <TouchableOpacity
-              style={styles.buttonCirle}
-              onPress={() => {
-                submitFollowers();
-              }}
-            >
-              <Text style={styles.touchableOpacityText}>
-                <Feather name="folder" size={28} color="#F50057"/>
-              </Text>
-          </TouchableOpacity>   
-          <Text style={styles.buttonInfo}>Repositórios</Text>
+        <View style={styles.devsIconContent}>
+          {devs.company && <Feather name="users" size={18} color="#0061ff" />}
+          <Text style={styles.devsIconText}>{devs.company}</Text>
         </View>
 
-        <View style={styles.buttonContent}>
-          <TouchableOpacity
-              style={styles.buttonCirle}
-              onPress={() => {
-                submitStars();
-              }}
-            >
-              <Text style={styles.touchableOpacityText}>
-                <Feather name="star" size={28} color="#F50057"/>
-              </Text>
-          </TouchableOpacity> 
-          <Text style={styles.buttonInfo}>Estrelas</Text>
+        <View style={styles.devsIconContent}>
+          {devs.location && (
+            <Feather name="map-pin" size={18} color="#0061ff" />
+          )}
+          <Text style={styles.devsIconText}>{devs.location}</Text>
         </View>
 
-        <View style={styles.buttonContent}>
-          <TouchableOpacity
-              style={styles.buttonCirle}
-              onPress={() => {
-                submitFollowers();
-              }}
-            >
-              <Text style={styles.touchableOpacityText}>
-                <Feather name="user" size={28} color="#F50057"/>
-              </Text>
-          </TouchableOpacity>          
-          <Text style={styles.buttonInfo}>Seguidores</Text>
+        <View style={styles.devsIconContent}>
+          {devs.blog && <Feather name="link" size={18} color="#0061ff" />}
+          <Text style={styles.devsIconText}>{devs.blog}</Text>
+        </View>
+
+        <View style={styles.devsIconContent}>
+          {devs.followers && <Feather name="user" size={18} color="#0061ff" />}
+          <Text
+            style={styles.devsIconText}
+          >{`${devs.followers} seguidores`}</Text>
+
+          {devs.following && (
+            <Feather name="user-check" size={18} color="#0061ff" />
+          )}
+          <Text
+            style={styles.devsIconText}
+          >{`${devs.following} seguindo`}</Text>
         </View>
       </View>
 
+      <View style={styles.buttonGroup}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => {
+            submitRepositories();
+          }}
+        >
+          <Feather name="folder" size={20} color="#0061ff" />
+          <Text style={styles.buttonText}>Repositórios</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => {
+            submitStars();
+          }}
+        >
+          <Feather name="star" size={20} color="#0061ff" />
+          <Text style={styles.buttonText}>Estrelas</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => {
+            submitFollowers();
+          }}
+        >
+          <Feather name="user" size={20} color="#0061ff" />
+          <Text style={styles.buttonText}>Seguidores</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }

@@ -6,13 +6,11 @@ import { AntDesign } from "@expo/vector-icons";
 
 import styles from "./styles";
 
-import logoImg from "../../assets/logo.png";
-
 export default function Follower() {
   const navigation = useNavigation();
   const route = useRoute();
 
-  const { stars } = route.params;
+  const { repositories } = route.params;
 
   function navigatieBack() {
     navigation.goBack();
@@ -27,16 +25,16 @@ export default function Follower() {
         >
           <Feather name="arrow-left" size={28} color="#0061ff" />
         </TouchableOpacity>
-        <Text style={styles.descriptionHeader}>Estrelas</Text>
+        <Text style={styles.descriptionHeader}>Repositórios</Text>
       </View>
 
-      <Text style={styles.total}>{`Total de estrelas: ${stars.length}`}</Text>
+      <Text style={styles.total}>{`Total de repositórios: ${repositories.length}`}</Text>
 
       <FlatList
-        data={stars}
-        keyExtractor={(stars) => String(stars.id)}
+        data={repositories}
+        keyExtractor={(repositories) => String(repositories.id)}
         showsVerticalScrollIndicator={false}
-        renderItem={({ item: star }) => (
+        renderItem={({ item: repositorie }) => (
           <View style={styles.list}>
             <View>
               <View style={styles.author}>
@@ -46,32 +44,32 @@ export default function Follower() {
                     height: 25,
                     borderRadius: 15,
                   }}
-                  source={{ uri: star.owner.avatar_url }}
+                  source={{ uri: repositorie.owner.avatar_url }}
                 />
-                <Text style={styles.authorText}>{star.owner.login}</Text>
+                <Text style={styles.authorText}>{repositorie.owner.login}</Text>
               </View>
-              <Text style={styles.name}>{star.name}</Text>
+              <Text style={styles.name}>{repositorie.name}</Text>
             </View>
 
-            <Text style={styles.description}>{star.description}</Text>
+            <Text style={styles.description}>{repositorie.description}</Text>
             <View style={styles.items}>
               <View style={styles.itemsContent}>
-                {star.language && ( <Feather name="circle" size={14} /> )}
+                {repositorie.language && ( <Feather name="circle" size={14} /> )}
 
-                {star.language && (
-                  <Text style={styles.itemsText}>{star.language}</Text>
+                {repositorie.language && (
+                  <Text style={styles.itemsText}>{repositorie.language}</Text>
                 )}
               </View>
 
               <View style={styles.itemsContent}>
                 <Feather name="star" size={14} />
 
-                <Text style={styles.itemsText}>{star.stargazers_count}</Text>
+                <Text style={styles.itemsText}>{repositorie.stargazers_count}</Text>
               </View>
 
               <View style={styles.itemsContent}>
                 <AntDesign name="fork" size={16} />
-                <Text style={styles.itemsText}>{star.forks}</Text>
+                <Text style={styles.itemsText}>{repositorie.forks}</Text>
               </View>
             </View>
           </View>

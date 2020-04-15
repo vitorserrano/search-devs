@@ -5,7 +5,7 @@ import { Feather } from "@expo/vector-icons";
 
 import styles from "./styles";
 
-import logoImg from "../../assets/logo.png";
+import api from "../../services/api";
 
 export default function Follower() {
   const navigation = useNavigation();
@@ -19,27 +19,19 @@ export default function Follower() {
 
   return (
     <View style={styles.container}>
-
       <View style={styles.header}>
-        <View style={styles.backIcon}>
-          <TouchableOpacity
-            style={styles.backTouchableOpacity}
-            onPress={navigatieBack}
-          >
-            <Feather name="arrow-left" size={28} color="#F50057" />
-          </TouchableOpacity>
-        </View>
-
-        <View style={styles.logoContent}>
-          <Image style={styles.logoImg} source={logoImg} />
-          <Text style={styles.logoText}>Search</Text>
-          <Text style={styles.logoTextBold}>Devs</Text>
-        </View>
-
-        <Text style={styles.routeText}>/Seguidores</Text>
+        <TouchableOpacity
+          style={styles.backTouchableOpacity}
+          onPress={navigatieBack}
+        >
+          <Feather name="arrow-left" size={28} color="#0061ff" />
+        </TouchableOpacity>
+        <Text style={styles.descriptionHeader}>Seguidores</Text>
       </View>
 
-      <Text style={styles.total}>{`Total de seguidores: ${followers.length}`}</Text>
+      <Text
+        style={styles.total}
+      >{`Total de seguidores: ${followers.length}`}</Text>
 
       <FlatList
         data={followers}
@@ -47,19 +39,18 @@ export default function Follower() {
         showsVerticalScrollIndicator={false}
         renderItem={({ item: follower }) => (
           <View style={styles.list}>
-            <Image 
-                style={{
-                    width: 50,
-                    height: 50, 
-                    borderRadius: 25
-                }}
-                source={{ uri: follower.avatar_url }}
+            <Image
+              style={{
+                width: 50,
+                height: 50,
+                borderRadius: 25,
+              }}
+              source={{ uri: follower.avatar_url }}
             />
             <Text style={styles.listUser}>{follower.login}</Text>
           </View>
         )}
       />
-
     </View>
   );
 }

@@ -12,7 +12,6 @@ const styles = StyleSheet.create({
   header: {
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "space-between",
   },
 
   backTouchableOpacity: {
@@ -21,33 +20,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
 
-  logoContent: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-  },
-
-  logoImg: {
-    width: 45,
-    height: 45,
-  },
-
-  logoText: {
-    fontSize: 18,
-    marginLeft: 4,
-  },
-
-  logoTextBold: {
-    fontSize: 18,
+  descriptionHeader: {
+    fontSize: 20,
+    marginLeft: 10,
     fontWeight: "bold",
-    marginLeft: 4,
-    color: "#F50057",
-  },
-
-  routeText: {
-    color: "#F50057",
-    marginLeft: 8,
-    fontSize: 12,
   },
 
   total: {
