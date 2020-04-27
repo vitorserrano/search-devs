@@ -10,7 +10,7 @@
 - [Como Contribuir](#como-contribuir)
 
 <a id="sobre"></a>
-### :computer: Sobre 
+### :bookmark: Sobre 
 
 - A idéia de criar uma aplicação com base no <b>GitHub</b> nasceu em uma aula da <b>faculdade</b>, na qual foi criado um App com busca de usuários utilizando a API do <b>GitHub</b>.
 
@@ -23,7 +23,7 @@
 - [Axios](https://github.com/axios/axios)
 
 <a id="como-usar"></a>
-### :page_facing_up: Como usar
+### :fire: Como usar
 
 - Clone esse repositório: `git clone https://github.com/vitorserrano/search-devs.git`
 - Instale as dependências: `npm install` 
