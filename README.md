@@ -2,6 +2,19 @@
     Search Devs
 </h1>
 
+# Índice
+
+- [Sobre](#sobre)
+- [Tecnologias Utilizadas](#tecnologias-utilizadas)
+- [Como Usar](#como-usar)
+- [Como Contribuir](#como-contribuir)
+
+<a id="sobre"></a>
+### :computer: Sobre 
+
+- A idéia de criar uma aplicação com base no <b>GitHub</b> nasceu em uma aula da <b>faculdade</b>, na qual foi criado um App com busca de usuários utilizando a API do <b>GitHub</b>.
+
+<a id="tecnologias-utilizadas"></a>
 ### :rocket: Tecnologias Utilizadas
 
 - [React Native](https://reactnative.dev/)
@@ -9,10 +22,7 @@
 - [React Navigation v5]()https://reactnavigation.org/
 - [Axios](https://github.com/axios/axios)
 
-### :computer: Projeto 
-
-- A idéia de criar uma aplicação com base no <b>GitHub</b> nasceu em uma aula da <b>faculdade</b>, na qual foi criado um App com busca de usuários utilizando a API do <b>GitHub</b>.
-
+<a id="como-usar"></a>
 ### :page_facing_up: Como usar
 
 - Clone esse repositório: `git clone https://github.com/vitorserrano/search-devs.git`
@@ -25,6 +35,7 @@
     <img alt="Search Devs" title="#searchDevs" width="260px" src=".github/Video.gif" />
 </h1>
 
+<a id="como-contribuir"></a>
 ### :recycle: Como contribuir
 
 - Faça um Fork desse repositório,
